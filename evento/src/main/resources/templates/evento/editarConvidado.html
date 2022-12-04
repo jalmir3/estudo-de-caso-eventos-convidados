@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" href="style/style.css"/>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style> 
+      body{
+      
+      background-image:url("https://th.bing.com/th/id/R.2da5efa463de71f8db77fdd0baf3c81b?rik=Ot%2fxoebb3Jx2Zw&pid=ImgRaw&r=0");
+      background-repeat: no-repeat;
+      background-size: cover;
+      }     
+      h5{
+        font-family:times new roman;
+      }
+      th{
+        font-family:negrito;
+      }
+      p{
+        font-family:arial; 
+      }
+      td{
+        font-family:times new roman;
+      }
+      </style>    
+<title></title>
+</head>
+<body>
+<header>
+<nav>
+    <div class="nav-wrapper" style="background-color:blue">
+      <a href="#" class="brand-logo">Editar Convidado</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/eventos"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></li>
+        <li><a href="/logout" ><i class="material-icons left">exit_to_app</i>Sair</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- <div th:each="evento : ${evento}" class="container detalhesEvento"> -->
+<div class="container detalhesEvento">
+<h5>Detalhes do Evento</h5>
+	<div class="col s6 offset-s3 z-depth-1" id="panell">
+		<p>Nome: <span th:text= "${evento.nome}"></span></p>
+		<p>Local: <span th:text= "${evento.local}"></span></p>
+		<p>Data: <span th:text= "${evento.data}"></span></p>
+		<p>Horario: <span th:text= "${evento.horario}"></span></p>
+   
+   <form method="post">
+            <h5 align="center">Editar Convidado</h5>
+            <b>Nome: <input type="text" th:value="${convidados.nomeConvidado}" name="nomeConvidado" required/></b>
+            <b>Rg: <span type="text" th:text="${convidados.rg}"/></span></b>
+            <br>
+            <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+    </form>
+     </tbody>
+  </table>
+   </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
